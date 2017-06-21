@@ -15,6 +15,15 @@ function isColourValid() {
   return colour != '';
 }
 
+function isAnimalsValid() {
+  var checkboxes = document.querySelectorAll("input[type=checkbox]")
+  var count = 0;
+  for (var i = 0; i < checkboxes.length; i++)
+    if (checkboxes[i].checked)
+      count++;
+  return count >= 2;
+}
+
 function validateForm() {
   if (!isEmailValid()) {
     console.log("Invalid Email");
@@ -28,6 +37,11 @@ function validateForm() {
 
   if (!isColourValid()) {
     console.log("Invalid Colour");
+    return false;
+  }
+
+  if (!isAnimalsValid()) {
+    console.log("Invalid Animals");
     return false;
   }
 
