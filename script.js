@@ -7,6 +7,7 @@ function isEmailValid() {
     email.parentElement.className = "error";
     return false;
   }
+  email.parentElement.className = "";
   return true;
 }
 
@@ -18,6 +19,7 @@ function isPasswordValid() {
     password.parentElement.className = "error";
     return false;
   }
+  password.parentElement.className = "";
   return true;
 }
 
@@ -28,6 +30,7 @@ function isColourValid() {
     colour.parentElement.className = "error";
     return false;
   }
+  colour.parentElement.className = "";
   return true;
 }
 
@@ -42,6 +45,7 @@ function isAnimalsValid() {
     checkboxes[0].parentElement.className = "error";
     return false;
   }
+  checkboxes[0].parentElement.className = "";
   return true;
 }
 
@@ -56,13 +60,8 @@ function isTigerValid() {
     tigerType.parentElement.className = "error";
     return false
   }
+  tigerType.parentElement.className = "";
   return true;
-}
-
-function removeErrorClassNames() {
-  var errorArr = document.getElementsByClassName("error");
-  for (var i = 0; i < errorArr.length; i++)
-    errorArr[i].className = "";
 }
 
 function validateForm() {
@@ -92,6 +91,5 @@ function validateForm() {
   }
 
   console.log("Valid Form");
-  removeErrorClassNames();
   return true;
 }
