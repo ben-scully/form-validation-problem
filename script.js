@@ -30,7 +30,18 @@ function isTigerValid() {
     return true;
 
   var tigerType = document.getElementById("tiger_type").value;
-  return tigerType != "";
+
+  if (tigerType == "") {
+    tigerType.parentElement.className = "error";
+    return false
+  }
+  return true;
+}
+
+function removeErrorClassNames() {
+  var errorArr = document.getElementsByClassName("error");
+  for (var i = 0; i < errorArr.length; i++)
+    errorArr[i].className = "";
 }
 
 function validateForm() {
@@ -60,5 +71,6 @@ function validateForm() {
   }
 
   console.log("Valid Form");
+  removeErrorClassNames();
   return false;
 }
