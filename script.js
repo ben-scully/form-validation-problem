@@ -14,7 +14,7 @@ function isPasswordValid() {
   var password = document.getElementById("password");
   return password.value.length > 8;
 
-  if (password.value.length <= 8;) {
+  if (password.value.length <= 8) {
     password.parentElement.className = "error";
     return false;
   }
