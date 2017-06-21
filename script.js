@@ -5,11 +5,22 @@ function isEmailValid() {
   return email.match(regex);
 }
 
+function isPasswordValid() {
+  var password = document.getElementById("password").value;
+  return password.length > 8;
+}
+
 function validateForm() {
   if (!isEmailValid()) {
     console.log("Invalid Email");
     return false;
   }
+
+  if (!isPasswordValid()) {
+    console.log("Invalid Password");
+    return false;
+  }
+
   console.log("Valid Form");
-  return true;
+  return false;
 }
