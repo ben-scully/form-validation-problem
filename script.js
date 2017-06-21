@@ -24,6 +24,15 @@ function isAnimalsValid() {
   return count >= 2;
 }
 
+function isTigerValid() {
+  var isTigerSelected = document.getElementById("tiger").checked;
+  if (!isTigerSelected)
+    return true;
+
+  var tigerType = document.getElementById("tiger_type").value;
+  return tigerType != "";
+}
+
 function validateForm() {
   if (!isEmailValid()) {
     console.log("Invalid Email");
@@ -42,6 +51,11 @@ function validateForm() {
 
   if (!isAnimalsValid()) {
     console.log("Invalid Animals");
+    return false;
+  }
+
+  if (!isTigerValid()) {
+    console.log("Invalid Tiger");
     return false;
   }
 
