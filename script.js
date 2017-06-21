@@ -29,9 +29,9 @@ function isTigerValid() {
   if (!isTigerSelected)
     return true;
 
-  var tigerType = document.getElementById("tiger_type").value;
+  var tigerType = document.getElementById("tiger_type");
 
-  if (tigerType == "") {
+  if (tigerType.value == "") {
     tigerType.parentElement.className = "error";
     return false
   }
