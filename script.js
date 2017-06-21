@@ -10,6 +10,11 @@ function isPasswordValid() {
   return password.length > 8;
 }
 
+function isColourValid() {
+  var colour = document.getElementById("colour").value;
+  return colour != '';
+}
+
 function validateForm() {
   if (!isEmailValid()) {
     console.log("Invalid Email");
@@ -18,6 +23,11 @@ function validateForm() {
 
   if (!isPasswordValid()) {
     console.log("Invalid Password");
+    return false;
+  }
+
+  if (!isColourValid()) {
+    console.log("Invalid Colour");
     return false;
   }
 
