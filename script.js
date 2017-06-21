@@ -50,12 +50,9 @@ function isAnimalsValid() {
 
 function isTigerValid() {
   var isTigerSelected = document.getElementById("tiger").checked;
-  if (!isTigerSelected)
-    return true;
-
   var tigerType = document.getElementById("tiger_type");
 
-  if (tigerType.value == "") {
+  if (isTigerSelected && tigerType.value == "") {
     tigerType.parentElement.className = "error";
     return false
   }
@@ -64,31 +61,18 @@ function isTigerValid() {
 }
 
 function validateForm() {
-  if (!isEmailValid()) {
-    console.log("Invalid Email");
-    return false;
-  }
+  var validations = [
+    isEmailValid(),
+    isPasswordValid(),
+    isColourValid(),
+    isAnimalsValid(),
+    isTigerValid()
+  ]
 
-  if (!isPasswordValid()) {
-    console.log("Invalid Password");
-    return false;
-  }
-
-  if (!isColourValid()) {
-    console.log("Invalid Colour");
-    return false;
-  }
-
-  if (!isAnimalsValid()) {
-    console.log("Invalid Animals");
-    return false;
-  }
-
-  if (!isTigerValid()) {
-    console.log("Invalid Tiger");
-    return false;
-  }
+  for (n = 0; n < validations.length; n++)
+    if (!validations[n])
+      return false;
 
   console.log("Valid Form");
-  return true;
+  return false;
 }
