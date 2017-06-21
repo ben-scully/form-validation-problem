@@ -73,6 +73,5 @@ function validateForm() {
     if (!validations[n])
       return false;
 
-  console.log("Valid Form");
-  return false;
+  return true;
 }
